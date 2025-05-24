@@ -1,0 +1,20 @@
+/* Basic Reset */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0; /* A light background for the app */
+  color: #333;
+}
+
+#root {
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: #d14a7f; /* A placeholder primary color */
+}
