@@ -1,0 +1,699 @@
+/* Basic styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #FFDAB9; /* PeachPuff */
+    --secondary-color: #E6E6FA; /* Lavender */
+    --accent-color: #F08080; /* LightCoral */
+    --text-color: #5D4037; /* Dark Brown */
+    --background-color: #FFF8DC; /* Cornsilk */
+    --light-pastel-bg: #FAF0E6; /* Linen */
+    --header-footer-bg: #F5E6CC; /* A slightly darker pastel for header/footer */
+    --input-border-color: #D2B48C; /* Tan */
+    --input-focus-border-color: var(--accent-color);
+    --testimonial-bg: var(--secondary-color); /* Lavender for testimonial background */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px; /* Base font size */
+    line-height: 1.6; /* Base line height */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--header-footer-bg);
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.8em;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover, header nav ul li a.active {
+    color: var(--accent-color);
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: var(--light-pastel-bg); 
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2em 1em;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5em; 
+    color: var(--text-color);
+    margin-bottom: 0.3em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: 1.5em;
+}
+
+/* Featured Cakes Section Styles (Home Page) */
+.featured-cakes {
+    padding: 3em 0;
+    background-color: var(--background-color);
+}
+
+.featured-cakes h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--text-color);
+}
+
+.cake-carousel-placeholder {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 20px; 
+}
+
+.cake-item-placeholder { /* Used on Home Page */
+    background-color: var(--light-pastel-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: calc(25% - 20px); 
+    min-width: 280px; 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-item-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.cake-item-placeholder h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: var(--accent-color);
+    font-size: 1.5em;
+}
+
+.cake-item-placeholder p {
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+/* Page Heading Container (Used on Our Cakes, Order Now, About Us, Contact etc.) */
+.page-heading-container {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-align: center;
+    background-color: var(--light-pastel-bg); 
+    margin-bottom: 2em;
+}
+
+.page-heading-container h1 {
+    font-size: 3em;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* "Our Cakes" Page Specific Styles */
+.cake-categories-container {
+    padding: 1em 0;
+}
+
+.cake-category {
+    margin-bottom: 3em;
+}
+
+.cake-category h2 {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 2.2em;
+    margin-bottom: 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block; 
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cake-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; 
+    justify-content: center; 
+}
+
+.cake-gallery-item {
+    background-color: var(--light-pastel-bg);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+    padding: 20px;
+    width: calc(33.333% - 25px); 
+    min-width: 290px; 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
+
+.cake-image-placeholder { 
+    width: 100%;
+    height: 220px; 
+    background-color: var(--secondary-color); 
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* To ensure pseudo-element respects border-radius */
+}
+
+.cake-image-placeholder::before {
+    content: "Cake Image";
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-align: center;
+    padding: 5px;
+}
+
+.cake-gallery-item h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: var(--accent-color);
+    font-size: 1.6em;
+}
+
+.cake-gallery-item p {
+    font-size: 1em;
+    color: var(--text-color);
+    flex-grow: 1; 
+    margin-bottom: 1em;
+}
+
+.cake-gallery-item .price {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--accent-color);
+    margin-top: auto; 
+}
+
+/* Order Form Styles ("Order Now" Page) & Contact Form Styles */
+.order-form, .contact-form { /* Shared styles for forms */
+    background-color: var(--light-pastel-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    margin: 0 auto 2em auto; 
+}
+
+.order-form { /* Specific if needed */
+    max-width: 700px; 
+}
+
+.contact-form { /* Specific if needed */
+    max-width: 100%; /* Take full width of its column */
+}
+
+
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: #fff; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="date"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 3px rgba(240, 128, 128, 0.2); 
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group .btn { 
+    width: 100%;
+    padding: 15px; 
+    font-size: 1.1em;
+}
+
+/* "About Us" Page Styles */
+.about-us-container {
+    padding: 1em 0;
+}
+
+.about-us-container section {
+    margin-bottom: 3em;
+    padding: 1.5em;
+    background-color: var(--light-pastel-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.about-us-container section h2 {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 2.2em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.brand-story p {
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.team-member {
+    background-color: var(--background-color); 
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.333% - 25px);
+    min-width: 280px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.team-member-photo-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: var(--secondary-color);
+    border-radius: 50%; 
+    margin: 0 auto 15px auto;
+    border: 3px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member-photo-placeholder::before {
+    content: "Photo";
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.team-member h3 {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    color: var(--accent-color);
+    font-size: 1.5em;
+}
+
+.team-member h4 {
+    margin-top: 0;
+    margin-bottom: 0.75em;
+    font-size: 1.1em;
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.bakery-values ul {
+    list-style: none;
+    padding: 0;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.bakery-values li {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.bakery-values li h3 {
+    color: var(--accent-color);
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.testimonials-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-item {
+    background-color: var(--testimonial-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.testimonial-item blockquote {
+    margin: 0 0 10px 0;
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--text-color);
+}
+
+.testimonial-item cite {
+    font-weight: bold;
+    color: var(--text-color);
+    font-style: normal;
+}
+
+/* "Contact Us" Page Styles */
+.contact-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Space between columns */
+    padding: 1em 0;
+}
+
+.contact-info-column, .contact-form-column {
+    flex: 1; /* Each column takes equal space */
+    min-width: 300px; /* Minimum width before stacking */
+}
+
+.contact-info-column section, .contact-form-column section {
+    background-color: var(--light-pastel-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    margin-bottom: 2em; /* Space between sections within a column */
+}
+
+.contact-info-column section h2, .contact-form-column section h2 {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.8em; /* Slightly smaller for these sections */
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-details p {
+    margin-bottom: 1em;
+    line-height: 1.7;
+    font-size: 1.05em;
+}
+
+.contact-details p strong {
+    color: var(--accent-color);
+}
+
+.contact-details a {
+    color: var(--text-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--accent-color);
+}
+
+.map-section h2 {
+    margin-bottom: 1em;
+}
+
+#google-map-placeholder {
+    border: 2px solid var(--primary-color); /* Add a border to map placeholder */
+}
+
+.inquiry-form-section {
+    /* The form inside this section already has styles from .contact-form */
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: var(--header-footer-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 3em; 
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* General Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; } 
+h2 { font-size: 2em; }   
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-pastel-bg); 
+    padding: 12px 25px; 
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #E07070; 
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color); 
+}
+
+.btn-primary:hover {
+    background-color: #F5C7A9; 
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color); 
+}
+
+.btn-secondary:hover {
+    background-color: #D8D8F0; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Tablet */
+    .cake-item-placeholder { 
+        width: calc(50% - 20px); 
+    }
+    .cake-gallery-item { 
+        width: calc(50% - 25px); 
+    }
+    .team-member {
+        width: calc(50% - 25px);
+    }
+    .hero h1 { font-size: 3em; }
+    .page-heading-container h1 { font-size: 2.5em; }
+    .about-us-container section h2, .cake-category h2, .contact-info-column section h2, .contact-form-column section h2 { font-size: 2em; }
+    .order-form {
+        width: 85%;
+    }
+    .contact-page-container {
+        flex-direction: column; /* Stack columns */
+    }
+    .contact-info-column, .contact-form-column {
+        min-width: 100%; /* Allow columns to take full width when stacked */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile landscape / Large phone */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+    .hero h1 { font-size: 2.8em; }
+    .hero p { font-size: 1.1em; }
+    .cake-item-placeholder, 
+    .cake-gallery-item,
+    .team-member {    
+        width: calc(100% - 25px); 
+        min-width: 0; 
+    }
+    .page-heading-container h1 { font-size: 2.2em; }
+    .about-us-container section h2, .cake-category h2, .contact-info-column section h2, .contact-form-column section h2 { font-size: 1.8em; }
+    .order-form, .contact-form {
+        width: 95%;
+        padding: 20px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="date"],
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+    }
+    .form-group .btn { padding: 12px; }
+    .about-us-container section { padding: 1em; }
+    .contact-info-column section, .contact-form-column section { padding: 20px; }
+}
+
+@media (max-width: 480px) { /* Mobile portrait */
+    .hero h1 { font-size: 2.2em; }
+    .hero p { font-size: 1em; }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .page-heading-container h1 { font-size: 2em; }
+    .about-us-container section h2, .cake-category h2, .contact-info-column section h2, .contact-form-column section h2 { font-size: 1.6em; }
+    .cake-gallery-item h3 { font-size: 1.4em; }
+    .cake-gallery-item p { font-size: 0.95em; }
+    .order-form, .contact-form {
+        width: 100%;
+        padding: 15px;
+        border-radius: 0; 
+    }
+    .form-group label { font-size: 0.95em; }
+    .team-member { width: 100%; }
+    .team-member-photo-placeholder { width: 120px; height: 120px; }
+    .bakery-values ul, .testimonials-list { grid-template-columns: 1fr; } 
+    .contact-details p { font-size: 1em; }
+}
